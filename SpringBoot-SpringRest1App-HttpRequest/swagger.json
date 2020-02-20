@@ -1,0 +1,314 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"description": "contact Operation",
+		"version": "1.1",
+		"title": "Contact-Api",
+		"termsOfService": "www.tekleads.com",
+		"contact": {
+			"name": "TEK-LEADS",
+			"url": "www.tekleads.com",
+			"email": "tekleads4u@gmail.com"
+		},
+		"license": {
+			"name": "www.apache.org/licence",
+			"url": "www.apache.org"
+		}
+	},
+	"host": "localhost:9090",
+	"basePath": "/",
+	"tags": [
+		{
+			"name": "contact-rest-controller",
+			"description": "Contact Rest Controller"
+		}
+	],
+	"paths": {
+		"/addContact": {
+			"post": {
+				"tags": [
+					"contact-rest-controller"
+				],
+				"summary": "addContact",
+				"operationId": "addContactUsingPOST",
+				"consumes": [
+					"application/xml",
+					"application/json"
+				],
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "c",
+						"description": "c",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Contact"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "string"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				}
+			}
+		},
+		"/addContacts": {
+			"post": {
+				"tags": [
+					"contact-rest-controller"
+				],
+				"summary": "addContacts",
+				"operationId": "addContactsUsingPOST",
+				"consumes": [
+					"application/xml",
+					"application/json"
+				],
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "contacts",
+						"description": "contacts",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Contacts"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "string"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				}
+			}
+		},
+		"/contact/{cid}": {
+			"get": {
+				"tags": [
+					"contact-rest-controller"
+				],
+				"summary": "getContact",
+				"operationId": "getContactUsingGET",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/xml",
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "cid",
+						"in": "path",
+						"description": "cid",
+						"required": true,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Contact"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				}
+			}
+		},
+		"/contacts": {
+			"get": {
+				"tags": [
+					"contact-rest-controller"
+				],
+				"summary": "getAllContacts",
+				"operationId": "getAllContactsUsingGET",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/xml",
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Contacts"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				}
+			}
+		},
+		"/contacts/{cid}": {
+			"get": {
+				"tags": [
+					"contact-rest-controller"
+				],
+				"summary": "getContactById1",
+				"operationId": "getContactById1UsingGET",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/xml",
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "cid",
+						"in": "path",
+						"description": "cid",
+						"required": true,
+						"type": "integer",
+						"format": "int32"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Contact"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				}
+			}
+		},
+		"/header": {
+			"get": {
+				"tags": [
+					"contact-rest-controller"
+				],
+				"summary": "readHeader",
+				"operationId": "readHeaderUsingGET",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"*/*"
+				],
+				"parameters": [
+					{
+						"name": "Secret-key",
+						"in": "header",
+						"description": "Secret-key",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "string"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"Contacts": {
+			"type": "object",
+			"properties": {
+				"contacts": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Contact"
+					}
+				}
+			}
+		},
+		"Contact": {
+			"type": "object",
+			"properties": {
+				"contactAddrs": {
+					"type": "string"
+				},
+				"contactId": {
+					"type": "integer",
+					"format": "int32"
+				},
+				"contactName": {
+					"type": "string"
+				},
+				"contactNum": {
+					"type": "integer",
+					"format": "int64"
+				}
+			}
+		}
+	}
+}
