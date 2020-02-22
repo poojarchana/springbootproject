@@ -87,6 +87,12 @@ public String readHeader(@RequestHeader("Secret-key") String secretKey){
 	return "ok";
 	
 }
+@GetMapping("/header")
+public String readHeader1(@RequestHeader("Secret-key") String secretKey){
+	System.out.println(secretKey);
+	return "ok";
+	
+}
 	
 }
 
